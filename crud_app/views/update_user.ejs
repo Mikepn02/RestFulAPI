@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>CRUD APPLICATION</title>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <div class="container">
+                <div class="text-center">
+                    <a href="/" class="nav-brand tect-dark">User Managment system</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--/Header-->
+    <!--Main Site-->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex-justify-between">
+                <a href="/" class="fas fa-angle-double-left">
+                    <span class="text-gradient">All user<i class="fa-solid fa-user-secret"></i></span>
+                </a>
+            </div>
+            <div class="form-title text-center">
+                <h2 class="text-dark">Update User</h2>
+                <span class="text-light">Use the below form to create the new account</span>
+            </div>
+            <!--form handling-->
+            <form method="POST" id="update-user" action="/api/users/<%= user._id %>?_method=PUT">
+                 <div class="new_user">
+                    <div class="form-group">
+                        <label for="name" class=".text-light">Name</label>
+                        <input type="hidden"name="id" value ="<%user._id%>" placeholder="1">
+                        <!-- user.name and other ejs function will display all the data of the
+                            user  in text area when you are going to update
+                        
+                        -->
+                        <input type="text" name="name" value="<%=user.name%>" placeholder="Mark stoenis">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="text-light">Email</label>
+                        <input type="text" name="email" value="<%=user.email%>" placeholder="example@gmail.com">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="Gender" class="text-light">Gender</label>
+                        <div class="radio_inline">  
+                            <input type="radio" name="gender" value="Male" <%=user.gender== 'Male' ? 'checked':''%>>
+                            <label for="gender" class="text-light">Male</label>
+                            <input type="radio" name="gender" value="Female" <%=user.gender== 'Female' ? 'checked':''%>>
+                            <label for="gender" class="text-light">Female</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Status" class="text-light">status</label>
+                        <div class="radio_inline">
+                            <input type="radio" name="status" value="active" <%=user.status== 'active' ? 'checked':''%>>
+                            <label for="status" class="text-light">active</label>
+                            <input type="radio" name="status" value="inactive" <%=user.status== 'inactive' ? 'checked':''%>>
+                            <label for="status" class="text-light">inactive</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn text-dark update">Save</button>
+                    </div>
+                 </div>
+            </form>
+        </div>
+    </main>
+    <!--Main Site-->
+    <script src="/js/index2.js"></script>
+    <h6>&copy;Designed by Mike_pn</h6>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>CRUD APPLICATION</title>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <div class="container">
+                <div class="text-center">
+                    <a href="/" class="nav-brand tect-dark">User Managment system</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--/Header-->
+    <!--Main Site-->
+       <main id="site-main">
+         <div class="container">
+            <div class="box-nav d-flex-justify-between">
+                <a href="/add-user" class="border-shadow">
+                    <span class="text-gradient">New user<i class="fa-solid fa-user-secret"></i></span>
+                </a>
+            </div>
+            <!--form handling-->
+            <form action="/" method="POST">
+               <table>
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>@Email</th>
+                        <th>Gender</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td>1</td>
+                    <td>User</td>
+                    <td>example@gmail.com</td>
+                    <td>male</td>
+                    <td>Active</td>
+                    <td>
+                        <a href="#" class="btn border-shadow update">
+                           <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span> 
+                        </a>
+                        <a href="#" class="btn border-shadow delete">
+                            <span class="text-gradient"><i class="fas fa-times"></i></span> 
+                         </a>
+                    </td>
+                </tbody>
+               </table>
+            </form>
+         </div>
+       </main>
+        <!-- include is function in ejs that call include folder to get footer file<%-include('include/_footer')%> -->
+    <!--Main Site-->
+</body>
+</html>
